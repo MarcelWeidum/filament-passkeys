@@ -16,9 +16,6 @@ This package is using the [passkeys package from spatie](https://spatie.be/docs/
 
 &nbsp;
 
-> [!CAUTION]
-> The current release is a **beta** release — use it cautiously in production.
-
 ## Installation
 
 1. Install the package via composer:
