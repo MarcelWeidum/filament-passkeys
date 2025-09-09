@@ -13,6 +13,7 @@ use Filament\Support\Facades\FilamentView;
 use Filament\View\PanelsRenderHook;
 use Illuminate\View\View;
 use Livewire\Livewire;
+use MarcelWeidum\Passkeys\Actions\GeneratePasskeyRegisterOptionsAction;
 use MarcelWeidum\Passkeys\Livewire\Passkeys as LivewirePasskeys;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
@@ -59,6 +60,10 @@ final class PasskeysServiceProvider extends PackageServiceProvider
 
     public function packageBooted(): void
     {
+        config([
+            'passkeys.actions.generate_passkey_register_options' => GeneratePasskeyRegisterOptionsAction::class,
+        ]);
+
         // Asset Registration
         FilamentAsset::register(
             $this->getAssets(),
