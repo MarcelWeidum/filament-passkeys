@@ -8,9 +8,12 @@ use Filament\Support\Assets\Asset;
 use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
+use Illuminate\Support\Facades\Route;
+use MarcelWeidum\Passkeys\Controllers\AuthenticateUsingPasskeyController;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Spatie\LaravelPasskeys\Http\Controllers\GeneratePasskeyAuthenticationOptionsController;
 
 final class PasskeysServiceProvider extends PackageServiceProvider
 {
@@ -53,11 +56,32 @@ final class PasskeysServiceProvider extends PackageServiceProvider
 
     public function packageBooted(): void
     {
+        $this->registerPasskeysMacro();
+
         // Asset Registration
         FilamentAsset::register(
             $this->getAssets(),
             $this->getAssetPackageName()
         );
+    }
+
+    protected function registerPasskeysMacro(): self
+    {
+        Route::macro('passkeys', function (string $prefix = 'passkeys') {
+            Route::prefix($prefix)->group(function () {
+                Route::get(
+                    'authentication-options',
+                    GeneratePasskeyAuthenticationOptionsController::class
+                )->name('passkeys.authentication_options');
+
+                Route::post(
+                    'authenticate',
+                    AuthenticateUsingPasskeyController::class
+                )->name('passkeys.login');
+            });
+        });
+
+        return $this;
     }
 
     protected function getAssetPackageName(): string
