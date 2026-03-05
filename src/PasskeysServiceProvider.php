@@ -8,6 +8,8 @@ use Filament\Support\Assets\Asset;
 use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
+use Livewire\Livewire;
+use MarcelWeidum\Passkeys\Livewire\Passkeys as LivewirePasskeys;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -58,6 +60,8 @@ final class PasskeysServiceProvider extends PackageServiceProvider
             $this->getAssets(),
             $this->getAssetPackageName()
         );
+
+        Livewire::component('filament-passkeys', LivewirePasskeys::class);
     }
 
     protected function getAssetPackageName(): string
