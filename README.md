@@ -17,7 +17,13 @@ This package is using the [passkeys package from spatie](https://spatie.be/docs/
 
 &nbsp;
 
-**Version compatibility:** `3.x` supports Filament v5. For Filament v3 and v4, use the [`2.x` branch](https://github.com/MarcelWeidum/filament-passkeys/tree/2.x).
+## Version compatibility
+
+| Package version                                                     | Filament version | Passkeys backend | Use this when |
+|---------------------------------------------------------------------| --- | --- | --- |
+| [`4.x`](https://github.com/MarcelWeidum/filament-passkeys/tree/4.x) | Filament v5 | Laravel native passkeys (`laravel/passkeys`) | Starting a new Filament v5 app or upgrading to Laravel native passkeys |
+| `3.x`                                                               | Filament v5 | Spatie passkeys (`spatie/laravel-passkeys`) | Staying on the older Spatie-backed implementation |
+| [`2.x`](https://github.com/MarcelWeidum/filament-passkeys/tree/2.x) | Filament v3 or v4 | Spatie passkeys (`spatie/laravel-passkeys`) | Using Filament v3 or v4 |
 
 ## Installation
 
