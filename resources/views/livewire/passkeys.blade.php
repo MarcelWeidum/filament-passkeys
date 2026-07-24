@@ -54,12 +54,12 @@
                 @foreach($passkeys as $passkey)
                     <x-filament::fieldset class="mt-2">
                         <div class="flex items-center">
-                            <div class="mr-2 flex flex-col">
+                            <div class="me-2 flex flex-col">
                                 <span>{{ $passkey->name }}</span>
                                 <span class="text-xs fi-sc-text">{{ __('filament-passkeys::passkeys.last_used') }}: {{ $passkey->last_used_at?->diffForHumans() ?? __('filament-passkeys::passkeys.not_used_yet') }}</span>
                             </div>
 
-                            <div class="ml-auto">
+                            <div class="ms-auto">
                                 {{ ($this->deleteAction)(['passkey' => $passkey->id]) }}
                             </div>
                         </div>
