@@ -18,4 +18,8 @@ return [
     'already_exists_notification_title' => 'این دستگاه قبلاً به‌عنوان پس‌کی ثبت شده است.',
     'created_notification_title' => 'پس‌کی شما ایجاد شد',
     'deleted_notification_title' => 'پس‌کی شما حذف شد',
+    'password' => 'رمز عبور',
+    'confirm_password' => 'تأیید',
+    'confirm_password_heading' => 'تأیید رمز عبور',
+    'confirm_password_description' => 'برای ادامه، رمز عبور خود را تأیید کنید.',
 ];

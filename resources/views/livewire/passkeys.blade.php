@@ -9,6 +9,15 @@
                         return
                     }
 
+                    if (await $wire.needsPasswordConfirmation()) {
+                        $wire.mountAction('confirmPassword')
+
+                        return
+                    }
+
+                    await this.submitRegister()
+                },
+                async submitRegister() {
                     try {
                         await window.FilamentPasskeys.register(this.name)
                         await $wire.passkeyCreated()
@@ -19,11 +28,18 @@
                             return
                         }
 
+                        if (error?.message === 'Password confirmation required.') {
+                            $wire.mountAction('confirmPassword')
+
+                            return
+                        }
+
                         throw error
                     }
                 },
             }"
             x-on:submit.prevent="register"
+            x-on:filament-passkeys-password-confirmed.window="submitRegister"
             class="flex items-start space-x-2"
         >
             <div class="w-full fi-fo-field">
