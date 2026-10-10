@@ -18,4 +18,8 @@ return [
     'already_exists_notification_title' => 'Dit apparaat is al geregistreerd als passkey.',
     'created_notification_title' => 'Je passkey is aangemaakt',
     'deleted_notification_title' => 'Je passkey is verwijderd',
+    'password' => 'Wachtwoord',
+    'confirm_password' => 'Bevestigen',
+    'confirm_password_heading' => 'Bevestig wachtwoord',
+    'confirm_password_description' => 'Bevestig je wachtwoord om door te gaan.',
 ];

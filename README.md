@@ -81,6 +81,8 @@ public function panel(Panel $panel): Panel
 
 Don't forget to add `->profile()` to you panel as well to manage your passkeys.
 
+Creating or deleting a passkey asks for the user's current password when Laravel's `password.confirm` management middleware is enabled (the default in `laravel/passkeys` 0.2+). After a successful confirmation, Laravel remembers it for `auth.password_timeout` seconds (3 hours by default). Set `management_middleware` to `[]` in the published passkeys config if you want to disable that step.
+
 ## Upgrading from the Spatie passkeys package
 
 This package no longer uses `spatie/laravel-passkeys`. If you are upgrading an existing 3.x application to the native Laravel passkeys version, follow the [3.x to native Laravel upgrade guide](UPGRADE.md).

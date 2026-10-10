@@ -18,4 +18,8 @@ return [
     'already_exists_notification_title' => 'To urządzenie jest już zarejestrowane jako klucz dostępu.',
     'created_notification_title' => 'Twój klucz dostępu został utworzony',
     'deleted_notification_title' => 'Twój klucz dostępu został usunięty',
+    'password' => 'Hasło',
+    'confirm_password' => 'Potwierdź',
+    'confirm_password_heading' => 'Potwierdź hasło',
+    'confirm_password_description' => 'Potwierdź hasło, aby kontynuować.',
 ];
