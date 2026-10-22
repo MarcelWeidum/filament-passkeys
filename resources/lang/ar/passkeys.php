@@ -18,4 +18,8 @@ return [
     'already_exists_notification_title' => 'هذا الجهاز مسجل بالفعل كمفتاح مرور.',
     'created_notification_title' => 'تم إنشاء مفتاح المرور الخاص بك',
     'deleted_notification_title' => 'تم حذف مفتاح المرور الخاص بك',
+    'password' => 'كلمة المرور',
+    'confirm_password' => 'تأكيد',
+    'confirm_password_heading' => 'تأكيد كلمة المرور',
+    'confirm_password_description' => 'يرجى تأكيد كلمة المرور للمتابعة.',
 ];

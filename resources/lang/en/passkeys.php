@@ -18,4 +18,8 @@ return [
     'already_exists_notification_title' => 'This device is already registered as a passkey.',
     'created_notification_title' => 'Your passkey has been created',
     'deleted_notification_title' => 'Your passkey has been deleted',
+    'password' => 'Password',
+    'confirm_password' => 'Confirm',
+    'confirm_password_heading' => 'Confirm password',
+    'confirm_password_description' => 'Please confirm your password to continue.',
 ];
