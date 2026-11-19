@@ -80,13 +80,17 @@ final class PasskeysServiceProvider extends PackageServiceProvider
     }
 
     /**
+     * Both are loaded on request: Filament prints every other registered asset on every page of every panel,
+     * including the panels that do not use this plugin. The views that show a passkey button or form load them
+     * with `@assets` (`resources/views/assets.blade.php`).
+     *
      * @return array<Asset>
      */
     protected function getAssets(): array
     {
         return [
-            Css::make('filament-passkeys-styles', __DIR__.'/../resources/dist/filament-passkeys.css'),
-            Js::make('filament-passkeys-scripts', __DIR__.'/../resources/dist/filament-passkeys.js'),
+            Css::make('filament-passkeys-styles', __DIR__.'/../resources/dist/filament-passkeys.css')->loadedOnRequest(),
+            Js::make('filament-passkeys-scripts', __DIR__.'/../resources/dist/filament-passkeys.js')->loadedOnRequest(),
         ];
     }
 

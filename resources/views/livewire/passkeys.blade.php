@@ -1,3 +1,5 @@
+@include('filament-passkeys::assets')
+
 <div>
     <div>
         <form
