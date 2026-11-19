@@ -21,7 +21,7 @@ final class PasskeysPlugin implements Plugin
     public static function get(): static
     {
         /** @var static $plugin */
-        $plugin = filament(app(static::class)->getId());
+        $plugin = filament(app(self::class)->getId());
 
         return $plugin;
     }
