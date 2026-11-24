@@ -1,5 +1,9 @@
-{{-- Loaded on request (see the service provider): only the pages that show a passkey button or form load them. --}}
+{{-- Loaded on request (see the service provider): only the pages that show a passkey button or form load them. Filament's renderer keeps the CSP nonce and `data-navigate-track`. --}}
 @assets
-    <link rel="stylesheet" href="{{ \Filament\Support\Facades\FilamentAsset::getStyleHref('filament-passkeys-styles', 'marcelweidum/filament-passkeys') }}">
-    <script src="{{ \Filament\Support\Facades\FilamentAsset::getScriptSrc('filament-passkeys-scripts', 'marcelweidum/filament-passkeys') }}"></script>
+    @foreach (\Filament\Support\Facades\FilamentAsset::getStyles(['marcelweidum/filament-passkeys']) as $asset)
+        {{ $asset->getHtml() }}
+    @endforeach
+    @foreach (\Filament\Support\Facades\FilamentAsset::getScripts(['marcelweidum/filament-passkeys']) as $asset)
+        {{ $asset->getHtml() }}
+    @endforeach
 @endassets
