@@ -81,6 +81,18 @@ public function panel(Panel $panel): Panel
 
 Don't forget to add `->profile()` to you panel as well to manage your passkeys.
 
+### Remember me
+
+Signing in with a passkey follows the login form's "Remember me" checkbox. To remember users regardless of the checkbox, or never remember them, use `remember()`:
+
+```php
+PasskeysPlugin::make()
+    ->remember() // always remember
+    // ->remember(false) // never remember
+```
+
+`remember()` also accepts a closure.
+
 ## Upgrading from the Spatie passkeys package
 
 This package no longer uses `spatie/laravel-passkeys`. If you are upgrading an existing 3.x application to the native Laravel passkeys version, follow the [3.x to native Laravel upgrade guide](UPGRADE.md).

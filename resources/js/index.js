@@ -9,8 +9,8 @@ window.FilamentPasskeys = {
         return Passkeys.register({ name })
     },
 
-    async login(redirect) {
-        const response = await Passkeys.verify()
+    async login(redirect, remember = false) {
+        const response = await Passkeys.verify({ remember })
 
         window.location.href = redirect || response?.redirect || '/'
     },
