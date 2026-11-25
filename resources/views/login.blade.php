@@ -1,3 +1,5 @@
+@include('filament-passkeys::assets')
+
 <div x-data="{ loginUrl: @js(filament()->getCurrentOrDefaultPanel()->getUrl()) }">
     <x-filament::button
         type="button"
